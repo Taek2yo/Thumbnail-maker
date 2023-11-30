@@ -1,38 +1,35 @@
 import React from 'react';
+import { withKnobs, text, number, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import Button from '../components/atoms/Button';
 
 export default {
 	title: 'Button',
 	component: Button,
-	argTypes: { onClick: { action: 'clicked' } },
+	decorators: [withKnobs],
+	argTypes: {
+		onClick: { action: 'clicked' },
+		onMouseEnter: { action: 'hovered' },
+		onMouseLeave: { action: 'unhovered' },
+	},
 };
 
-const Template = (args) => <Button {...args} />;
+export const DefaultButton = () => {
+	const nameValue = text('name', 'default');
+	const idValue = number('id', 0);
+	const onClickHandler = action('handleButtonClick');
+	const isActive = boolean('활성', false);
 
-export const Default = Template.bind({});
-Default.args = {
-	name: 'default',
-	id: 0,
-	$active: false,
+	return (
+		<Button
+			name={nameValue}
+			id={idValue}
+			onClick={onClickHandler}
+			$active={isActive}
+		/>
+	);
 };
 
-export const GradientRandom = Template.bind({});
-GradientRandom.args = {
-	...Default.args,
-	name: '그래디언트 랜덤',
-	id: 1,
-};
-
-export const SolidRandom = Template.bind({});
-SolidRandom.args = {
-	...Default.args,
-	name: '단색 랜덤',
-	id: 2,
-};
-
-export const OpenModalImageURL = Template.bind({});
-OpenModalImageURL.args = {
-	...Default.args,
-	name: '이미지 URL 입력하기',
-	id: 3,
+DefaultButton.story = {
+	name: 'Button',
 };
