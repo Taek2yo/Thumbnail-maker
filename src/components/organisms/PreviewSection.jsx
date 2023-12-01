@@ -1,11 +1,11 @@
 import React from 'react';
 import ImageBox from '../molecules/ImageBox';
-import * as S from '../../styles/components/Layout';
+import { PreviewSectionStyle } from '../../styles/components/organisms/SectionStyle';
 
 export default function PreviewSection() {
 	return (
-		<S.PreviewSectionStyle>
+		<PreviewSectionStyle>
 			<ImageBox />
-		</S.PreviewSectionStyle>
+		</PreviewSectionStyle>
 	);
 }

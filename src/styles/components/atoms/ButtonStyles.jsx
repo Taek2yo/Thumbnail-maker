@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { flexCenter } from '../global/Mixins';
 
 export const ButtonStyles = styled.button`
 	width: 180px;
@@ -18,9 +17,4 @@ export const ButtonStyles = styled.button`
 			opacity 0.3s ease,
 			transform 0.3s ease;
 	}
-`;
-
-export const ButtonWrap = styled.div`
-	${flexCenter};
-	gap: 7px;
 `;

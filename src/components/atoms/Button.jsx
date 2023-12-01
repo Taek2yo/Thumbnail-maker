@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonStyles } from '../../styles/components/ButtonStyles';
+import { ButtonStyles } from '../../styles/components/atoms/ButtonStyles';
 
 export default function Button({ name, onClick, $active }) {
 	return (
