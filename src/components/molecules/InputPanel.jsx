@@ -10,6 +10,7 @@ import {
 
 export default function InputPanel() {
 	const { title, subTitle, category } = useSelector(selectInput);
+
 	const dispatch = useDispatch();
 
 	const handleTitleChange = (newTitle) => {
@@ -28,19 +29,16 @@ export default function InputPanel() {
 		<div>
 			<InputField
 				label="Title"
-				id="제목"
 				value={title}
 				onChange={(e) => handleTitleChange(e.target.value)}
 			/>
 			<InputField
 				label="SubTitle"
-				id="부제목"
 				value={subTitle}
 				onChange={(e) => handleSubTitleChange(e.target.value)}
 			/>
 			<InputField
 				label="Category"
-				id="카테고리"
 				value={category}
 				onChange={(e) => handleCategoryChange(e.target.value)}
 			/>
