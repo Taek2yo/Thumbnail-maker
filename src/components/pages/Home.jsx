@@ -5,9 +5,9 @@ import * as S from '../../styles/components/Layout';
 
 export default function Home() {
 	return (
-		<S.divideSection>
+		<S.DivideSection>
 			<ControlPanelSection />
 			<PreviewSection />
-		</S.divideSection>
+		</S.DivideSection>
 	);
 }

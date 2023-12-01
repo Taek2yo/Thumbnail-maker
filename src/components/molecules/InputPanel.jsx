@@ -28,17 +28,17 @@ export default function InputPanel() {
 	return (
 		<div>
 			<InputField
-				label="제목"
+				label="Title"
 				value={title}
 				onChange={(e) => handleTitleChange(e.target.value)}
 			/>
 			<InputField
-				label="소제목"
+				label="SubTitle"
 				value={subTitle}
 				onChange={(e) => handleSubTitleChange(e.target.value)}
 			/>
 			<InputField
-				label="분류"
+				label="Category"
 				value={category}
 				onChange={(e) => handleCategoryChange(e.target.value)}
 			/>
