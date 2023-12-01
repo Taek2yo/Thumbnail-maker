@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../atoms/Button';
+import * as S from '../../styles/components/ButtonStyles';
 
 export default function ButtonPanel() {
 	const [countIndex, setCountIndex] = useState(0);
@@ -14,7 +15,7 @@ export default function ButtonPanel() {
 		setCountIndex(idx);
 	};
 	return (
-		<>
+		<S.ButtonWrap>
 			{buttons.map((v, idx) => (
 				<Button
 					key={v.id}
@@ -23,6 +24,6 @@ export default function ButtonPanel() {
 					onClick={(e) => handleActiveButton(e, idx)}
 				/>
 			))}
-		</>
+		</S.ButtonWrap>
 	);
 }
