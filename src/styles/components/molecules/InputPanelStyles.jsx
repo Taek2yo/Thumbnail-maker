@@ -16,4 +16,5 @@ export const Label = styled.label`
 	margin-bottom: 5px;
 	width: 100%;
 	color: white;
+	font-weight: bold;
 `;
