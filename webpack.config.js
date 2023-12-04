@@ -46,16 +46,8 @@ module.exports = {
 				use: ['style-loader', 'css-loader'],
 			},
 			{
-				test: /\.(woff|woff2|ttf|otf)$/i,
-				use: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: '[name].[ext]',
-							outputPath: 'assets/fonts/',
-						},
-					},
-				],
+				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				type: 'asset/resource',
 			},
 		],
 	},
