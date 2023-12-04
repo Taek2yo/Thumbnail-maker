@@ -1,6 +1,6 @@
 import React from 'react';
 import Input from '../atoms/Input';
-import * as S from '../../styles/components/molecules/InputPanelStyles';
+import * as S from '../../styles/components/organisms/InputPanelStyles';
 
 export default function InputField({ label, value, onChange }) {
 	const maxleng = label === 'Title' ? 38 : 30;
