@@ -28,6 +28,35 @@ module.exports = {
 				exclude: /node_modules/,
 				use: 'babel-loader',
 			},
+			{
+				test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 10000,
+							fallback: 'file-loader',
+							name: 'images/[name].[ext]',
+						},
+					},
+				],
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
+				test: /\.(woff|woff2|ttf|otf)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'assets/fonts/',
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
