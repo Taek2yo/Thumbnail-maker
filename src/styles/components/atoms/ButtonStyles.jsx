@@ -17,4 +17,5 @@ export const ButtonStyles = styled.button`
 			opacity 0.3s ease,
 			transform 0.3s ease;
 	}
+	font-family: 'Noto Sans KR';
 `;

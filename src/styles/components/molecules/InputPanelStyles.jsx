@@ -17,4 +17,5 @@ export const Label = styled.label`
 	width: 100%;
 	color: white;
 	font-weight: bold;
+	font-family: 'Noto Sans KR';
 `;

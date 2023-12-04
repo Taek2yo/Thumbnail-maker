@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../atoms/Button';
+import Text from '../atoms/Text';
 import { ButtonWrap } from '../../styles/components/molecules/ButtonPanelStyles';
 
 export default function ButtonPanel() {
@@ -15,15 +16,18 @@ export default function ButtonPanel() {
 	};
 
 	return (
-		<ButtonWrap>
-			{buttons.map((v, idx) => (
-				<Button
-					key={v.id}
-					name={v.name}
-					$active={countIndex === idx}
-					onClick={(e) => handleActiveButton(e, idx)}
-				/>
-			))}
-		</ButtonWrap>
+		<>
+			<Text content="배경 색 설정" />
+			<ButtonWrap>
+				{buttons.map((v, idx) => (
+					<Button
+						key={v.id}
+						name={v.name}
+						$active={countIndex === idx}
+						onClick={(e) => handleActiveButton(e, idx)}
+					/>
+				))}
+			</ButtonWrap>
+		</>
 	);
 }
