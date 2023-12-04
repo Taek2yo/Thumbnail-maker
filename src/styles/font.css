@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Noto Sans KR";
+    src: local("Noto Sans KR"), url('../assets/fonts/NotoSansKR-Regular.woff') format("woff");
+}
+
+@font-face {
+    font-family: "MiSaeng";
+    src: local("MiSaeng"), url('../assets/fonts/SDMiSaeng.woff') format("woff");
+}
+
+@font-face {
+    font-family: "Jalnan2";
+    src: local("Jalnan2"), url('../assets/fonts/Jalnan2.woff') format("woff");
+}
+
+@font-face {
+    font-family: "AutoMobileContest";
+    src: local("AutoMobileContest"), url('../assets/fonts/Automobile-Contest.woff') format("woff");
+}
+
+@font-face {
+    font-family: "Rembank";
+    src: local("Rembank"), url('../assets/fonts/Rembank.woff') format("woff");
+}
