@@ -1,12 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ButtonStyles = styled.button`
-	width: 180px;
+export const Btn = css`
 	padding: 8px;
 	border: none;
-	border-radius: 15px;
-	font-size: 16px;
-	font-weight: 400;
 	cursor: pointer;
 	background-color: ${(props) => (props.$active ? '#464d9b' : '#CDCDCD')};
 	color: ${(props) => (props.$active ? 'white' : 'white')};
@@ -18,4 +14,17 @@ export const ButtonStyles = styled.button`
 			transform 0.3s ease;
 	}
 	font-family: 'Noto Sans KR';
+`;
+
+export const ButtonStyles = styled.button`
+	${Btn}
+	width: 180px;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 400;
+`;
+
+export const FontSizeBtn = styled.button`
+	${Btn}
+	width: 80px;
 `;
