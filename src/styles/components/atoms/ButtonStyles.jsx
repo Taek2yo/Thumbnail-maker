@@ -28,3 +28,21 @@ export const FontSizeBtn = styled.button`
 	${Btn}
 	width: 80px;
 `;
+
+export const CancelBtn = styled.button`
+	width: 70px;
+	padding: 8px;
+	border: none;
+	cursor: pointer;
+	color: white;
+	background-color: #fa4e4e;
+`;
+
+export const ConfirmBtn = styled.button`
+	width: 70px;
+	padding: 8px;
+	border: none;
+	cursor: pointer;
+	color: white;
+	background-color: #5b61bb;
+`;
