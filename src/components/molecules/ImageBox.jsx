@@ -12,11 +12,11 @@ export default function ImageBox() {
 	return (
 		<S.ImageContainer>
 			<PreviewImage img={src} />
-			<div>
-				<S.ThumbnailTitle>{title}</S.ThumbnailTitle>
-				<S.ThumbnailSubTitle>{subTitle}</S.ThumbnailSubTitle>
-			</div>
-			<S.ThumbnailCategory>{category}</S.ThumbnailCategory>
+			<S.ContentWrap>
+				<S.Title>{title}</S.Title>
+				<S.SubTitle>{subTitle}</S.SubTitle>
+			</S.ContentWrap>
+			<S.Category>{category}</S.Category>
 		</S.ImageContainer>
 	);
 }
