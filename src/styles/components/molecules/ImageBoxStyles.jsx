@@ -20,6 +20,9 @@ export const ContentWrap = styled.div`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 
 export const Title = styled.div`
@@ -41,6 +44,7 @@ export const SubTitle = styled.div`
 	display: inline-block;
 	box-sizing: border-box;
 	margin-top: 10px;
+	width: fit-content;
 `;
 
 export const Category = styled.div`
