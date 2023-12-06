@@ -11,7 +11,6 @@ const inputTextSlice = createSlice({
 	initialState,
 	reducers: {
 		setTitle: (state, action) => ({
-			// TODO : Object.assign() 랑 비교해보기
 			...state,
 			title: action.payload,
 		}),
