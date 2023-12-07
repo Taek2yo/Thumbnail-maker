@@ -8,6 +8,7 @@ import {
 	selectSubTitleFont,
 	selectCategoryFont,
 } from '../../redux/module/fontSlice';
+import { getImageUrl } from '../../redux/module/backgroundSlice';
 import PreviewImage from '../atoms/PreviewImage';
 
 export default function ImageBox() {
@@ -16,9 +17,7 @@ export default function ImageBox() {
 	const subTitleFont = useSelector(selectSubTitleFont);
 	const categoryFont = useSelector(selectCategoryFont);
 	const compositionById = useSelector(composition);
-	const src =
-		'https://img.hani.co.kr/imgdb/resize/2007/1227/68227042_20071227.jpg';
-
+	const imageUrl = useSelector(getImageUrl);
 	let content = null;
 
 	if (compositionById === 0 || compositionById === -1) {
@@ -47,9 +46,10 @@ export default function ImageBox() {
 			</S.ContentWrap>
 		);
 	}
+
 	return (
 		<S.ImageContainer>
-			<PreviewImage img={src} />
+			<PreviewImage imageUrl={imageUrl} />
 			{content}
 		</S.ImageContainer>
 	);

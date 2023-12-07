@@ -12,6 +12,7 @@ export const ImageContainer = styled.div`
 	flex-direction: column;
 	text-align: center;
 	align-items: center;
+	background: none;
 `;
 
 export const ContentWrap = styled.div`

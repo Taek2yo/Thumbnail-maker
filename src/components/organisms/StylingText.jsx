@@ -8,7 +8,7 @@ export default function StylingText() {
 		subTitle: null,
 		category: null,
 	});
-	console.log(selectedFonts);
+
 	const buttons = [
 		{ name: 'Title', id: 0 },
 		{ name: 'SubTitle', id: 1 },
