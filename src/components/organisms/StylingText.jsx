@@ -3,7 +3,12 @@ import StyledText from '../molecules/StyledText';
 
 export default function StylingText() {
 	const [buttonStates, setButtonStates] = useState([false, false, false]);
-
+	const [selectedFonts, setSelectedFonts] = useState({
+		title: null,
+		subTitle: null,
+		category: null,
+	});
+	console.log(selectedFonts);
 	const buttons = [
 		{ name: 'Title', id: 0 },
 		{ name: 'SubTitle', id: 1 },
@@ -16,14 +21,19 @@ export default function StylingText() {
 		setButtonStates(btns);
 	};
 
+	const handleFontChange = (font, target) => {
+		setSelectedFonts((prevFonts) => ({ ...prevFonts, [target]: font }));
+	};
+
 	return (
 		<div style={{ width: '95%' }}>
 			{buttons.map((button, idx) => (
 				<StyledText
 					key={button.id}
-					title={button.name}
+					content={button.name}
 					isActive={buttonStates[idx]}
 					onClick={() => handleActiveButton(idx)}
+					onFontChange={handleFontChange}
 				/>
 			))}
 		</div>

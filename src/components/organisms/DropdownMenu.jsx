@@ -8,9 +8,15 @@ import {
 	DropdownWrapper,
 } from '../../styles/components/molecules/DropdownMolecule';
 
-const fonts = ['Noto Sans KR', '미생체', '잘난체', 'Automolie', 'Rembank'];
+const fonts = [
+	{ name: 'Noto Sans KR', value: 'Noto Sans KR' },
+	{ name: '미생체', value: 'MiSaeng' },
+	{ name: '잘난체', value: 'Jalnan2' },
+	{ name: 'Automolie', value: 'AutoMobileContest' },
+	{ name: 'Rembank', value: 'Rembank' },
+];
 
-export default function DropdownMenu() {
+export default function DropdownMenu({ target, onFontChange }) {
 	const [$visible, setVisible] = useState(false);
 	const [selectedFont, setSelectedFont] = useState(null);
 	const ref = useRef(null);
@@ -18,6 +24,7 @@ export default function DropdownMenu() {
 	const handleButtonClick = () => {
 		setVisible(!$visible);
 	};
+
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (ref.current && !ref.current.contains(event.target)) {
@@ -35,7 +42,10 @@ export default function DropdownMenu() {
 	const handleFontSelect = (font) => {
 		setSelectedFont(font);
 		setVisible(false);
-		// Todo : 선택한 폰트에 대한 추가 로직 , 코드 분리 고민
+		if (onFontChange) {
+			onFontChange(font, target);
+			console.log(target);
+		}
 	};
 
 	return (
@@ -44,9 +54,9 @@ export default function DropdownMenu() {
 				{selectedFont || '폰트 선택'}
 			</DropdownButton>
 			<DropdownContent $visible={$visible}>
-				{fonts.map((font) => (
-					<FontItem key={font} onClick={() => handleFontSelect(font)}>
-						{font}
+				{fonts.map((v) => (
+					<FontItem key={v.name} onClick={() => handleFontSelect(v.value)}>
+						{v.name}
 					</FontItem>
 				))}
 			</DropdownContent>
