@@ -8,7 +8,11 @@ import {
 	selectSubTitleFont,
 	selectCategoryFont,
 } from '../../redux/module/fontSlice';
-import { getImageUrl } from '../../redux/module/backgroundSlice';
+import {
+	getImageUrl,
+	getSolidRandom,
+	getGradientRandom,
+} from '../../redux/module/backgroundSlice';
 import PreviewImage from '../atoms/PreviewImage';
 
 export default function ImageBox() {
@@ -18,6 +22,9 @@ export default function ImageBox() {
 	const categoryFont = useSelector(selectCategoryFont);
 	const compositionById = useSelector(composition);
 	const imageUrl = useSelector(getImageUrl);
+	const solidColor = useSelector(getSolidRandom);
+	const gradientColor = useSelector(getGradientRandom);
+
 	let content = null;
 
 	if (compositionById === 0 || compositionById === -1) {
@@ -47,9 +54,19 @@ export default function ImageBox() {
 		);
 	}
 
+	let backgroundStyle = {};
+
+	if (solidColor) {
+		backgroundStyle = { background: solidColor };
+	} else if (gradientColor) {
+		backgroundStyle = { background: gradientColor };
+	} else if (imageUrl) {
+		backgroundStyle = { backgroundImage: `url(${imageUrl})` };
+	}
+
 	return (
-		<S.ImageContainer>
-			<PreviewImage imageUrl={imageUrl} />
+		<S.ImageContainer style={backgroundStyle}>
+			{imageUrl ? <PreviewImage imageUrl={imageUrl} /> : null}
 			{content}
 		</S.ImageContainer>
 	);

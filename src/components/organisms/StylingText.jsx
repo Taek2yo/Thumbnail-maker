@@ -3,6 +3,7 @@ import StyledText from '../molecules/StyledText';
 
 export default function StylingText() {
 	const [buttonStates, setButtonStates] = useState([false, false, false]);
+	// eslint-disable-next-line no-unused-vars
 	const [selectedFonts, setSelectedFonts] = useState({
 		title: null,
 		subTitle: null,
