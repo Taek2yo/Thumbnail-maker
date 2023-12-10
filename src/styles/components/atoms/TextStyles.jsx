@@ -4,5 +4,5 @@ import '../../font.css';
 export const TextStyle = styled.span`
 	font-family: 'Noto Sans KR';
 	color: white;
-	font-size: 20px;
+	font-size: 18px;
 `;

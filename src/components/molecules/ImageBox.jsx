@@ -17,12 +17,12 @@ import {
 	getGradientRandom,
 } from '../../redux/module/backgroundSlice';
 import PreviewImage from '../atoms/PreviewImage';
+import DefaultImage from '../../assets/img/default.webp';
 
 export default function ImageBox() {
 	const { title, subTitle, category } = useSelector(selectInput);
 	const titleFont = useSelector(selectTitleFont);
 	const getTitleColor = useSelector(titleColor);
-	console.log(getTitleColor);
 	const getSubTitleColor = useSelector(subTitleColor);
 	const getCategoryColor = useSelector(categoryColor);
 	const subTitleFont = useSelector(selectSubTitleFont);
@@ -89,7 +89,11 @@ export default function ImageBox() {
 
 	return (
 		<S.ImageContainer style={backgroundStyle}>
-			{imageUrl ? <PreviewImage imageUrl={imageUrl} /> : null}
+			{imageUrl ? (
+				<PreviewImage imageUrl={imageUrl} />
+			) : (
+				<PreviewImage imageUrl={DefaultImage} />
+			)}
 			{content}
 		</S.ImageContainer>
 	);

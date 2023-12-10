@@ -29,7 +29,7 @@ module.exports = {
 				use: 'babel-loader',
 			},
 			{
-				test: /\.(jpg|jpeg|gif|png|svg|ico)?$/,
+				test: /\.(jpg|jpeg|gif|png|svg|ico|webp)?$/,
 				use: [
 					{
 						loader: 'url-loader',
