@@ -7,6 +7,9 @@ import {
 	selectTitleFont,
 	selectSubTitleFont,
 	selectCategoryFont,
+	titleColor,
+	subTitleColor,
+	categoryColor,
 } from '../../redux/module/fontSlice';
 import {
 	getImageUrl,
@@ -18,6 +21,10 @@ import PreviewImage from '../atoms/PreviewImage';
 export default function ImageBox() {
 	const { title, subTitle, category } = useSelector(selectInput);
 	const titleFont = useSelector(selectTitleFont);
+	const getTitleColor = useSelector(titleColor);
+	console.log(getTitleColor);
+	const getSubTitleColor = useSelector(subTitleColor);
+	const getCategoryColor = useSelector(categoryColor);
 	const subTitleFont = useSelector(selectSubTitleFont);
 	const categoryFont = useSelector(selectCategoryFont);
 	const compositionById = useSelector(composition);
@@ -31,25 +38,41 @@ export default function ImageBox() {
 		content = (
 			<>
 				<S.ContentWrap>
-					<S.Title style={{ fontFamily: titleFont }}>{title}</S.Title>
-					<S.SubTitle style={{ fontFamily: subTitleFont }}>
+					<S.Title style={{ fontFamily: titleFont, color: getTitleColor }}>
+						{title}
+					</S.Title>
+					<S.SubTitle
+						style={{ fontFamily: subTitleFont, color: getSubTitleColor }}
+					>
 						{subTitle}
 					</S.SubTitle>
 				</S.ContentWrap>
-				<S.Category style={{ fontFamily: categoryFont }}>{category}</S.Category>
+				<S.Category
+					style={{ fontFamily: categoryFont, color: getCategoryColor }}
+				>
+					{category}
+				</S.Category>
 			</>
 		);
 	} else if (compositionById === 1) {
 		content = (
 			<S.ContentWrap>
-				<S.Title style={{ fontFamily: titleFont }}>{title}</S.Title>
-				<S.SubTitle style={{ fontFamily: subTitleFont }}>{subTitle}</S.SubTitle>
+				<S.Title style={{ fontFamily: titleFont, color: getTitleColor }}>
+					{title}
+				</S.Title>
+				<S.SubTitle
+					style={{ fontFamily: subTitleFont, color: getSubTitleColor }}
+				>
+					{subTitle}
+				</S.SubTitle>
 			</S.ContentWrap>
 		);
 	} else if (compositionById === 2) {
 		content = (
 			<S.ContentWrap>
-				<S.Title style={{ fontFamily: titleFont }}>{title}</S.Title>
+				<S.Title style={{ fontFamily: titleFont, color: getTitleColor }}>
+					{title}
+				</S.Title>
 			</S.ContentWrap>
 		);
 	}

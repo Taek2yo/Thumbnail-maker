@@ -28,12 +28,10 @@ export const ContentWrap = styled.div`
 
 export const Title = styled.div`
 	z-index: 1;
-	font-size: 48px;
+	font-size: 60px;
 	font-weight: bold;
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	box-sizing: border-box;
+	width: 90%;
+	word-wrap: break-word;
 `;
 
 export const SubTitle = styled.div`

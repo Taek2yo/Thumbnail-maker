@@ -13,7 +13,6 @@ export const DropdownButton = styled.button`
 export const FontItem = styled.div`
 	padding: 10px;
 	cursor: pointer;
-
 	&:hover {
 		background-color: #ddd;
 	}

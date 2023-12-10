@@ -20,7 +20,7 @@ export default function ButtonPanel() {
 	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
 	const [countIndex, setCountIndex] = useState(-1);
-	console.log(countIndex);
+
 	const openModal = () => {
 		setOpen(true);
 	};
