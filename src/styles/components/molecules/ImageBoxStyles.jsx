@@ -5,8 +5,7 @@ export const ImageContainer = styled.div`
 	max-width: 100%;
 	width: 800px;
 	height: 600px;
-	background-color: white;
-	box-shadow: 5px 5px 5px 5px black;
+	box-shadow: 10px 10px 10px 0px black;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;

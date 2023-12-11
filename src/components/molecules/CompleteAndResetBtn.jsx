@@ -34,9 +34,17 @@ export default function CompleteAndResetBtn() {
 		const imageContainer = document.getElementById('capture-element');
 
 		if (imageContainer) {
-			html2canvas(imageContainer).then((canvas) => {
+			const clone = imageContainer.cloneNode(true);
+
+			clone.style.boxShadow = 'none';
+
+			document.body.appendChild(clone);
+
+			html2canvas(clone).then((canvas) => {
 				const imageDataUrl = canvas.toDataURL('image/png');
 				saveImageToFile(imageDataUrl, 'captured_image.png');
+
+				document.body.removeChild(clone);
 			});
 		}
 	};
