@@ -37,7 +37,7 @@ export const Title = styled.div`
 export const SubTitle = styled.div`
 	z-index: 1;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 32px;
 	border-top: 2px solid white;
 	padding-top: 5px;
 	display: inline-block;
