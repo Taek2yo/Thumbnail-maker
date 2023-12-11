@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 	display: flex;
 	gap: 15px;
-	margin-top: 20px;
+	margin-top: 10px;
 `;
 
 export const ResetBtn = styled.button`

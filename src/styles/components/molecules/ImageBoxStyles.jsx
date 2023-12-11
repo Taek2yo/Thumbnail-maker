@@ -54,7 +54,7 @@ export const Category = styled.div`
 	transform: translateX(-50%);
 	z-index: 1;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 30px;
 	overflow: hidden;
 	width: 100%;
 	text-align: center;
