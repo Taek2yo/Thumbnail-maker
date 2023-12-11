@@ -17,7 +17,6 @@ import {
 	getGradientRandom,
 } from '../../redux/module/backgroundSlice';
 import PreviewImage from '../atoms/PreviewImage';
-import DefaultImage from '../../assets/img/default.webp';
 
 export default function ImageBox() {
 	const { title, subTitle, category } = useSelector(selectInput);
@@ -29,6 +28,7 @@ export default function ImageBox() {
 	const categoryFont = useSelector(selectCategoryFont);
 	const compositionById = useSelector(composition);
 	const imageUrl = useSelector(getImageUrl);
+
 	const solidColor = useSelector(getSolidRandom);
 	const gradientColor = useSelector(getGradientRandom);
 
@@ -89,11 +89,7 @@ export default function ImageBox() {
 
 	return (
 		<S.ImageContainer style={backgroundStyle}>
-			{imageUrl ? (
-				<PreviewImage imageUrl={imageUrl} />
-			) : (
-				<PreviewImage imageUrl={DefaultImage} />
-			)}
+			{imageUrl && <PreviewImage imageUrl={imageUrl} />}
 			{content}
 		</S.ImageContainer>
 	);

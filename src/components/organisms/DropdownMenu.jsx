@@ -9,6 +9,7 @@ import {
 } from '../../styles/components/molecules/DropdownMolecule';
 
 const fonts = [
+	{ name: '없음', value: '' },
 	{ name: 'Noto Sans KR', value: 'Noto Sans KR' },
 	{ name: '미생체', value: 'MiSaeng' },
 	{ name: '잘난체', value: 'Jalnan2' },

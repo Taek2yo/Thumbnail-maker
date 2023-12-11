@@ -22,10 +22,12 @@ const inputTextSlice = createSlice({
 			...state,
 			category: action.payload,
 		}),
+		reset: () => initialState,
 	},
 });
 
-export const { setTitle, setSubTitle, setCategory } = inputTextSlice.actions;
+export const { setTitle, setSubTitle, setCategory, reset } =
+	inputTextSlice.actions;
 export const selectInput = (state) => state.inputTextSlice;
 
 export default inputTextSlice.reducer;

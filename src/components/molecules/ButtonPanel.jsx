@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../atoms/Button';
 import Text from '../atoms/Text';
 import { ButtonWrap } from '../../styles/components/molecules/ButtonPanelStyles';
@@ -7,6 +7,8 @@ import {
 	setBackgroundImg,
 	setSolidRandom,
 	setGradientRandom,
+	setCountIdx,
+	getIdx,
 } from '../../redux/module/backgroundSlice';
 import Modal from './Modal';
 
@@ -19,7 +21,6 @@ const buttons = [
 export default function ButtonPanel() {
 	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
-	const [countIndex, setCountIndex] = useState(-1);
 
 	const openModal = () => {
 		setOpen(true);
@@ -28,6 +29,7 @@ export default function ButtonPanel() {
 	const closeModal = () => {
 		setOpen(false);
 	};
+	const getCountIdx = useSelector(getIdx);
 
 	const generateRandomGradient = () => {
 		dispatch(setBackgroundImg(''));
@@ -49,17 +51,17 @@ export default function ButtonPanel() {
 
 	const handleGradientButton = () => {
 		generateRandomGradient();
-		setCountIndex(0);
+		dispatch(setCountIdx(0));
 	};
 
 	const handleSolidButton = () => {
 		generateRandomSolid();
-		setCountIndex(1);
+		dispatch(setCountIdx(1));
 	};
 
 	const handleModalButton = () => {
 		openModal();
-		setCountIndex(2);
+		dispatch(setCountIdx(2));
 	};
 
 	return (
@@ -70,7 +72,7 @@ export default function ButtonPanel() {
 					<Button
 						key={v.id}
 						name={v.name}
-						$active={countIndex === idx}
+						$active={getCountIdx === idx}
 						onClick={() => {
 							if (idx === 0) handleGradientButton();
 							else if (idx === 1) handleSolidButton();

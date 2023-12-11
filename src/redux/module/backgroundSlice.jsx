@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import DefaultImage from '../../assets/img/default.webp';
 
 const initialState = {
 	gradient: '',
 	solid: '',
-	imageUrl: '',
+	imageUrl: DefaultImage,
+	countIdx: -1,
 };
 
 const backgroundSlice = createSlice({
@@ -22,13 +24,25 @@ const backgroundSlice = createSlice({
 			...state,
 			imageUrl: action.payload,
 		}),
+		setCountIdx: (state, action) => ({
+			...state,
+			countIdx: action.payload,
+		}),
+		reset: () => initialState,
 	},
 });
 
-export const { setGradientRandom, setSolidRandom, setBackgroundImg } =
-	backgroundSlice.actions;
+export const {
+	setGradientRandom,
+	setSolidRandom,
+	setBackgroundImg,
+	setCountIdx,
+	reset,
+} = backgroundSlice.actions;
+
 export const getGradientRandom = (state) => state.backgroundSlice.gradient;
 export const getSolidRandom = (state) => state.backgroundSlice.solid;
 export const getImageUrl = (state) => state.backgroundSlice.imageUrl;
+export const getIdx = (state) => state.backgroundSlice.countIdx;
 
 export default backgroundSlice.reducer;

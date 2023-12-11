@@ -2,17 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import Text from '../atoms/Text';
 import DropdownMenu from '../organisms/DropdownMenu';
-import { FontSizeBtn } from '../../styles/components/atoms/ButtonStyles';
 import { ColorPicker } from '../../styles/components/atoms/InputStyles';
 import * as S from '../../styles/components/molecules/StyledTextStyles';
 import { setFont, setColor } from '../../redux/module/fontSlice';
 
-export default function StyledText({
-	content,
-	isActive,
-	onClick,
-	onFontChange,
-}) {
+export default function StyledText({ content, onFontChange }) {
 	const [localState, setLocalState] = useState({
 		selectedColor: '#000000',
 	});
@@ -26,6 +20,7 @@ export default function StyledText({
 			selectedColor: newColor,
 		}));
 	}, []);
+
 	const determineTarget = useCallback(() => {
 		const contentMap = {
 			Title: 'title',
@@ -63,9 +58,6 @@ export default function StyledText({
 					target={determineTarget()}
 					onFontChange={handleFontSelect}
 				/>
-				<FontSizeBtn $active={isActive} onClick={onClick}>
-					크기 작게
-				</FontSizeBtn>
 				<ColorPicker
 					type="color"
 					value={localState.selectedColor}

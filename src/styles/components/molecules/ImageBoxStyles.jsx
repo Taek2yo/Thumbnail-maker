@@ -28,7 +28,7 @@ export const ContentWrap = styled.div`
 
 export const Title = styled.div`
 	z-index: 1;
-	font-size: 60px;
+	font-size: 72px;
 	font-weight: bold;
 	width: 90%;
 	word-wrap: break-word;
@@ -37,7 +37,7 @@ export const Title = styled.div`
 export const SubTitle = styled.div`
 	z-index: 1;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 40px;
 	border-top: 2px solid white;
 	padding-top: 5px;
 	display: inline-block;

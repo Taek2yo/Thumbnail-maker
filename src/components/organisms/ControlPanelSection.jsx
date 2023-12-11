@@ -2,6 +2,7 @@ import React from 'react';
 import InputPanel from './InputPanel';
 import ButtonPanel from '../molecules/ButtonPanel';
 import StylingPanel from './StylingPanel';
+import CompleteAndResetBtn from '../molecules/CompleteAndResetBtn';
 import { ControlPanelSectionStyle } from '../../styles/components/organisms/SectionStyle';
 
 export default function ControlPanelSection() {
@@ -10,6 +11,7 @@ export default function ControlPanelSection() {
 			<InputPanel />
 			<ButtonPanel />
 			<StylingPanel />
+			<CompleteAndResetBtn />
 		</ControlPanelSectionStyle>
 	);
 }

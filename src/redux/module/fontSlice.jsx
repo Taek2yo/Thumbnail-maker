@@ -39,10 +39,11 @@ const fontSlice = createSlice({
 				},
 			};
 		},
+		reset: () => initialState,
 	},
 });
 
-export const { setFont, setColor } = fontSlice.actions;
+export const { setFont, setColor, reset } = fontSlice.actions;
 
 export const selectTitleFont = (state) => state.fontSlice.title.font;
 export const selectSubTitleFont = (state) => state.fontSlice.subtitle.font;
