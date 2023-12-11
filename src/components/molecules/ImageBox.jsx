@@ -88,7 +88,7 @@ export default function ImageBox() {
 	}
 
 	return (
-		<S.ImageContainer style={backgroundStyle}>
+		<S.ImageContainer style={backgroundStyle} id="capture-element">
 			{imageUrl && <PreviewImage imageUrl={imageUrl} />}
 			{content}
 		</S.ImageContainer>
