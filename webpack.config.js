@@ -8,6 +8,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'index_bundle.js',
+		assetModuleFilename: 'images/[hash][ext][query]',
 	},
 	target: 'web',
 	devServer: {
@@ -31,16 +32,8 @@ module.exports = {
 			},
 			{
 				test: /\.(jpg|jpeg|gif|png|svg|ico|webp)?$/,
-				use: [
-					{
-						loader: 'url-loader',
-						options: {
-							limit: 10000,
-							fallback: 'file-loader',
-							name: 'images/[name].[ext]',
-						},
-					},
-				],
+				dependency: { not: ['url'] },
+				type: 'asset/resource',
 			},
 			{
 				test: /\.css$/,
