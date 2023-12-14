@@ -6,6 +6,7 @@
 	"extends": [
 		"plugin:react/recommended",
 		"airbnb",
+		"airbnb-typescript",
 		"prettier",
 		"plugin:storybook/recommended"
 	],
@@ -21,7 +22,7 @@
 		"react/jsx-filename-extension": [
 			1,
 			{
-				"extensions": [".js", ".jsx"]
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
 			}
 		],
 		"react/prop-types": 0,
@@ -34,5 +35,12 @@
 			2,
 			{ "namedComponents": ["arrow-function", "function-declaration"] }
 		]
+	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
 	}
 }

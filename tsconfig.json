@@ -13,8 +13,10 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
 		"jsx": "react-jsx"
+	},
+	"parserOptions": {
+		"project": "./tsconfig.json"
 	},
 	"include": ["src"]
 }
