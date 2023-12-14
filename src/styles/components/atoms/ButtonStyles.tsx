@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Btn = css`
+type OwnProps = {
+	$active: Number;
+};
+
+export const Btn = css<OwnProps>`
 	padding: 8px;
 	border: none;
 	cursor: pointer;
@@ -16,7 +20,7 @@ export const Btn = css`
 	font-family: 'Noto Sans KR';
 `;
 
-export const ButtonStyles = styled.button`
+export const ButtonStyles = styled.button<OwnProps>`
 	${Btn}
 	width: 180px;
 	border-radius: 4px;
@@ -24,12 +28,12 @@ export const ButtonStyles = styled.button`
 	font-weight: 400;
 `;
 
-export const FontSizeBtn = styled.button`
+export const FontSizeBtn = styled.button<OwnProps>`
 	${Btn}
 	width: 80px;
 `;
 
-export const CancelBtn = styled.button`
+export const CancelBtn = styled.button<OwnProps>`
 	width: 70px;
 	padding: 8px;
 	border: none;
@@ -38,7 +42,7 @@ export const CancelBtn = styled.button`
 	background-color: #fa4e4e;
 `;
 
-export const ConfirmBtn = styled.button`
+export const ConfirmBtn = styled.button<OwnProps>`
 	width: 70px;
 	padding: 8px;
 	border: none;
