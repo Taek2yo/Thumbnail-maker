@@ -21,7 +21,7 @@ module.exports = {
 		liveReload: true,
 	},
 	resolve: {
-		extensions: ['.js', '.jsx', '.json'],
+		extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
 	},
 	module: {
 		rules: [
@@ -42,6 +42,11 @@ module.exports = {
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
+			},
+			{
+				test: /\.(ts|tsx)$/,
+				exclude: /node_modules/,
+				use: 'ts-loader',
 			},
 		],
 	},
