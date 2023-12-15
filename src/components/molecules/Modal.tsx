@@ -4,14 +4,18 @@ import { setBackgroundImg } from '../../redux/module/backgroundSlice';
 import * as S from '../../styles/components/molecules/ModalStyle';
 import * as B from '../../styles/components/atoms/ButtonStyles';
 
-export default function Modal({ onClose }) {
-	const [imageUrl, setImageUrl] = useState('');
+interface ModalProps {
+	onClose: () => void;
+}
+
+export default function Modal({ onClose }: ModalProps) {
+	const [imageUrl, setImageUrl] = useState<string>('');
 	const dispatch = useDispatch();
-	const handleCancel = () => {
+	const handleCancel = (): void => {
 		onClose();
 	};
 
-	const handleConfirm = () => {
+	const handleConfirm = (): void => {
 		dispatch(setBackgroundImg(imageUrl));
 		onClose();
 	};

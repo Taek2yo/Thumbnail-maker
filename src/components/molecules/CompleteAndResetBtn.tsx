@@ -16,7 +16,7 @@ export default function CompleteAndResetBtn() {
 		dispatch(resetComposition());
 	};
 
-	const saveImageToFile = (dataUrl, fileName) => {
+	const saveImageToFile = (dataUrl: string, fileName: string) => {
 		const link = document.createElement('a');
 		link.href = dataUrl;
 		link.download = fileName;
@@ -34,7 +34,7 @@ export default function CompleteAndResetBtn() {
 		const imageContainer = document.getElementById('capture-element');
 
 		if (imageContainer) {
-			const clone = imageContainer.cloneNode(true);
+			const clone = imageContainer.cloneNode(true) as HTMLElement;
 
 			clone.style.boxShadow = 'none';
 

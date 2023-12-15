@@ -33,7 +33,7 @@ export const FontSizeBtn = styled.button<OwnProps>`
 	width: 80px;
 `;
 
-export const CancelBtn = styled.button<OwnProps>`
+export const CancelBtn = styled.button`
 	width: 70px;
 	padding: 8px;
 	border: none;
@@ -42,7 +42,7 @@ export const CancelBtn = styled.button<OwnProps>`
 	background-color: #fa4e4e;
 `;
 
-export const ConfirmBtn = styled.button<OwnProps>`
+export const ConfirmBtn = styled.button`
 	width: 70px;
 	padding: 8px;
 	border: none;
