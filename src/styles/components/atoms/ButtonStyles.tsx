@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 type OwnProps = {
-	$active: Number;
+	$active: boolean;
 };
 
 export const Btn = css<OwnProps>`

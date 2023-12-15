@@ -4,7 +4,7 @@ import { ButtonStyles } from '../../styles/components/atoms/ButtonStyles';
 interface BtnProps {
 	name: string;
 	onClick: () => void;
-	$active: number;
+	$active: boolean;
 }
 
 export default function Button({ name, onClick, $active }: BtnProps) {

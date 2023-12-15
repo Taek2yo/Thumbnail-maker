@@ -12,6 +12,11 @@ import {
 } from '../../redux/module/backgroundSlice';
 import Modal from './Modal';
 
+interface ButtonInfo {
+	name: string;
+	id: number;
+}
+
 const buttons = [
 	{ name: '그래디언트 랜덤', id: 0 },
 	{ name: '단색 랜덤', id: 1 },
@@ -20,7 +25,7 @@ const buttons = [
 
 export default function ButtonPanel() {
 	const dispatch = useDispatch();
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState<boolean>(false);
 
 	const openModal = () => {
 		setOpen(true);
@@ -68,7 +73,7 @@ export default function ButtonPanel() {
 		<>
 			<Text content="배경 색 설정" />
 			<ButtonWrap>
-				{buttons.map((v, idx) => (
+				{buttons.map((v: ButtonInfo, idx: number) => (
 					<Button
 						key={v.id}
 						name={v.name}
