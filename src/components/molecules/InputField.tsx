@@ -2,7 +2,13 @@ import React from 'react';
 import Input from '../atoms/Input';
 import * as S from '../../styles/components/organisms/InputPanelStyles';
 
-export default function InputField({ label, value, onChange }) {
+interface FieldProps {
+	label: string;
+	value: string;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function InputField({ label, value, onChange }: FieldProps) {
 	const maxleng = label === 'Title' ? 38 : 30;
 	return (
 		<S.LabelInputWrap>

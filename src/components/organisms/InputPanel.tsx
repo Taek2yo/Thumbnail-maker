@@ -13,15 +13,15 @@ export default function InputPanel() {
 
 	const dispatch = useDispatch();
 
-	const handleTitleChange = (newTitle) => {
+	const handleTitleChange = (newTitle: string) => {
 		dispatch(setTitle(newTitle));
 	};
 
-	const handleSubTitleChange = (newSubTitle) => {
+	const handleSubTitleChange = (newSubTitle: string) => {
 		dispatch(setSubTitle(newSubTitle));
 	};
 
-	const handleCategoryChange = (newCategory) => {
+	const handleCategoryChange = (newCategory: string) => {
 		dispatch(setCategory(newCategory));
 	};
 
