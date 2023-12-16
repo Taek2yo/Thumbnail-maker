@@ -25,6 +25,7 @@ export const Header = styled.div`
 	margin-bottom: 30px;
 	.text {
 		background-image: linear-gradient(to right, #9d7eef, #5e5cb7);
+		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
 		font-weight: bold;

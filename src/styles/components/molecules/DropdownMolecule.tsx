@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const DropdownContent = styled.div`
+interface OwnProps {
+	$visible: boolean;
+}
+
+export const DropdownContent = styled.div<OwnProps>`
 	display: ${(props) => (props.$visible ? 'block' : 'none')};
 	position: absolute;
 	background-color: #f9f9f9;

@@ -3,11 +3,11 @@ import StyledText from '../molecules/StyledText';
 
 export default function StylingText() {
 	const [buttonStates, setButtonStates] = useState([false, false, false]);
-	// eslint-disable-next-line no-unused-vars
+	console.log(buttonStates);
 	const [selectedFonts, setSelectedFonts] = useState({
-		title: null,
-		subTitle: null,
-		category: null,
+		title: null as string | null,
+		subTitle: null as string | null,
+		category: null as string | null,
 	});
 
 	const buttons = [
@@ -16,13 +16,13 @@ export default function StylingText() {
 		{ name: 'Category', id: 2 },
 	];
 
-	const handleActiveButton = (idx) => {
+	const handleActiveButton = (idx: number) => {
 		const btns = [...buttonStates];
 		btns[idx] = !btns[idx];
 		setButtonStates(btns);
 	};
 
-	const handleFontChange = (font, target) => {
+	const handleFontChange = (font: string, target: string) => {
 		setSelectedFonts((prevFonts) => ({ ...prevFonts, [target]: font }));
 	};
 

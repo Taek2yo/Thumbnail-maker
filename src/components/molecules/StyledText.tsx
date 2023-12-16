@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, ChangeEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import Text from '../atoms/Text';
 import DropdownMenu from '../organisms/DropdownMenu';
@@ -6,14 +6,21 @@ import { ColorPicker } from '../../styles/components/atoms/InputStyles';
 import * as S from '../../styles/components/molecules/StyledTextStyles';
 import { setFont, setColor } from '../../redux/module/fontSlice';
 
-export default function StyledText({ content, onFontChange }) {
+interface StyledTextProps {
+	content: string;
+	isActive: boolean;
+	onClick: () => void;
+	onFontChange?: (font: string, target: string) => void;
+}
+
+export default function StyledText({ content, onFontChange }: StyledTextProps) {
 	const [localState, setLocalState] = useState({
 		selectedColor: '#000000',
 	});
 
 	const dispatch = useDispatch();
 
-	const handleColorChange = useCallback((e) => {
+	const handleColorChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
 		const newColor = e.target.value;
 		setLocalState((prevState) => ({
 			...prevState,
@@ -22,7 +29,7 @@ export default function StyledText({ content, onFontChange }) {
 	}, []);
 
 	const determineTarget = useCallback(() => {
-		const contentMap = {
+		const contentMap: { [key: string]: string } = {
 			Title: 'title',
 			SubTitle: 'subtitle',
 			Category: 'category',
@@ -32,13 +39,13 @@ export default function StyledText({ content, onFontChange }) {
 	}, [content]);
 
 	const handleFontSelect = useCallback(
-		(font) => {
+		(font: string) => {
 			dispatch(setFont({ font, target: determineTarget() }));
 			if (onFontChange) {
 				onFontChange(font, determineTarget());
 			}
 		},
-		[determineTarget, onFontChange]
+		[determineTarget, onFontChange, dispatch]
 	);
 
 	const handleLocal = useCallback(() => {

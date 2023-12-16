@@ -32,7 +32,7 @@ export default function ImageBox() {
 	const solidColor = useSelector(getSolidRandom);
 	const gradientColor = useSelector(getGradientRandom);
 
-	let content = null;
+	let content: React.ReactNode = null;
 
 	if (compositionById === 0 || compositionById === -1) {
 		content = (
@@ -77,7 +77,7 @@ export default function ImageBox() {
 		);
 	}
 
-	let backgroundStyle = {};
+	let backgroundStyle: React.CSSProperties = {};
 
 	if (solidColor) {
 		backgroundStyle = { background: solidColor };

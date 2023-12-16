@@ -17,18 +17,23 @@ const fonts = [
 	{ name: 'Rembank (영어)', value: 'Rembank' },
 ];
 
-function DropdownMenu({ target, onFontChange }) {
+interface DropdownMenuProps {
+	target: string;
+	onFontChange?: (font: string, target: string) => void;
+}
+
+function DropdownMenu({ target, onFontChange }: DropdownMenuProps) {
 	const [$visible, setVisible] = useState(false);
-	const [selectedFont, setSelectedFont] = useState(null);
-	const ref = useRef(null);
+	const [selectedFont, setSelectedFont] = useState<string | null>(null);
+	const ref = useRef<HTMLDivElement>(null);
 
 	const handleButtonClick = () => {
 		setVisible(!$visible);
 	};
 
 	useEffect(() => {
-		const handleClickOutside = (event) => {
-			if (ref.current && !ref.current.contains(event.target)) {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (ref.current && !ref.current.contains(event.target as Node)) {
 				setVisible(false);
 			}
 		};
@@ -40,7 +45,7 @@ function DropdownMenu({ target, onFontChange }) {
 		};
 	}, [ref, setVisible]);
 
-	const handleFontSelect = (font) => {
+	const handleFontSelect = (font: string) => {
 		setSelectedFont(font);
 		setVisible(false);
 		if (onFontChange) {
