@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import * as S from '../../styles/components/molecules/ImageBoxStyles';
 import { selectInput } from '../../redux/module/inputTextSlice';
-import { composition } from '../../redux/module/compositionSlice';
+import { selectComposition } from '../../redux/module/compositionSlice';
 import {
 	selectTitleFont,
 	selectSubTitleFont,
@@ -26,7 +26,7 @@ export default function ImageBox() {
 	const getCategoryColor = useSelector(categoryColor);
 	const subTitleFont = useSelector(selectSubTitleFont);
 	const categoryFont = useSelector(selectCategoryFont);
-	const compositionById = useSelector(composition);
+	const compositionById = useSelector(selectComposition);
 	const imageUrl = useSelector(getImageUrl);
 
 	const solidColor = useSelector(getSolidRandom);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-	composition,
+	selectComposition,
 	updateComposition,
 } from '../../redux/module/compositionSlice';
 import Button from '../atoms/Button';
@@ -16,7 +16,7 @@ const buttons = [
 
 export default function ThumbnailComposition() {
 	const dispatch = useDispatch();
-	const compositionById = useSelector(composition);
+	const compositionById = useSelector(selectComposition);
 
 	const handleActiveButton = (idx: number) => {
 		dispatch(updateComposition(idx));

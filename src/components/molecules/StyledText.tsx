@@ -5,6 +5,7 @@ import DropdownMenu from '../organisms/DropdownMenu';
 import { ColorPicker } from '../../styles/components/atoms/InputStyles';
 import * as S from '../../styles/components/molecules/StyledTextStyles';
 import { setFont, setColor } from '../../redux/module/fontSlice';
+import { FontState } from '../../redux/module/fontSlice';
 
 interface StyledTextProps {
 	content: string;
@@ -29,7 +30,7 @@ export default function StyledText({ content, onFontChange }: StyledTextProps) {
 	}, []);
 
 	const determineTarget = useCallback(() => {
-		const contentMap: { [key: string]: string } = {
+		const contentMap: { [key: string]: keyof FontState } = {
 			Title: 'title',
 			SubTitle: 'subtitle',
 			Category: 'category',
@@ -40,9 +41,10 @@ export default function StyledText({ content, onFontChange }: StyledTextProps) {
 
 	const handleFontSelect = useCallback(
 		(font: string) => {
-			dispatch(setFont({ font, target: determineTarget() }));
+			const target: keyof FontState = determineTarget();
+			dispatch(setFont({ font, target }));
 			if (onFontChange) {
-				onFontChange(font, determineTarget());
+				onFontChange(font, target);
 			}
 		},
 		[determineTarget, onFontChange, dispatch]
@@ -52,7 +54,7 @@ export default function StyledText({ content, onFontChange }: StyledTextProps) {
 		dispatch(
 			setColor({
 				color: localState.selectedColor,
-				target: content.toLowerCase(),
+				target: content.toLowerCase() as keyof FontState,
 			})
 		);
 	}, [localState.selectedColor, content]);
