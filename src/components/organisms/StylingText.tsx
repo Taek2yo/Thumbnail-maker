@@ -3,7 +3,6 @@ import StyledText from '../molecules/StyledText';
 
 export default function StylingText() {
 	const [buttonStates, setButtonStates] = useState([false, false, false]);
-	console.log(buttonStates);
 	const [selectedFonts, setSelectedFonts] = useState({
 		title: null as string | null,
 		subTitle: null as string | null,
